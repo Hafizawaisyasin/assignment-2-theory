@@ -39,18 +39,32 @@ function calculations() {
 	});
 	//("Calories:" + calories + " carbs:" + carbs
 
-	$("#result").append(
+	$("#result").html(
 		`<div class="styling" style="text-align:center"> Total Calories:${calories} <br> Totalcarbs:  ${carbs}</div> `
 	);
+	$("#result").parent().css("background", " rgb(145, 89, 89)");
+	$("#result").css("font-size", "40px");
 }
 
 var length = document.querySelectorAll(".list").length;
 
-for (var i = 0; i < length; i++) {
-	document.querySelectorAll(".list")[i].addEventListener("click", function () {
-		$(this).toggleClass("add");
-		//	console.log(this.innerHTML);
-	});
+//for (var i = 0; i < length; i++) {
+//	document.querySelectorAll(".list")[i].addEventListener("click", function () {
+//$(this).toggleClass("add");
+//	console.log(this.innerHTML);
+//	});
 
-	//what to do when click detected.
-}
+//what to do when click detected.
+//}
+
+// $(".list").on('click',function () {
+// 	$(this).toggleClass("add");
+// });
+//by document
+// $("document").on('click','.list',function () {
+// 	$(this).toggleClass("add");
+// });
+
+$(".list").click(function () {
+	$(this).toggleClass("add");
+});
